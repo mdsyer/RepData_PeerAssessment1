@@ -111,7 +111,7 @@ Create a new dataset that is equal to the original dataset but with the missing 
 
 
 ```r
-# replace NA values with the mean of the interval
+# replace the NA values in each interval with the mean of that interval
 imputed_data <- do.call("rbind", as.list(by(data, data$interval, function(x) { 
                     x$steps[is.na(x$steps)] <- mean(x$steps, na.rm = TRUE); return(x) })))
 ```

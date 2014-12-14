@@ -283,7 +283,7 @@ plot(steps_per_interval$interval, steps_per_interval$steps,
 
 <p>Create a new dataset that is equal to the original dataset but with the missing data filled in.</p>
 
-<pre><code class="r"># replace NA values with the mean of the interval
+<pre><code class="r"># replace the NA values in each interval with the mean of that interval
 imputed_data &lt;- do.call(&quot;rbind&quot;, as.list(by(data, data$interval, function(x) { 
                     x$steps[is.na(x$steps)] &lt;- mean(x$steps, na.rm = TRUE); return(x) })))
 </code></pre>
